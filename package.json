@@ -1,0 +1,19 @@
+{
+  "name": "unixtime",
+  "version": "1.0.0",
+  "description": "CLI tool that allows you turn an English date string into a an Unix timestamp",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stevenbraham/unixtime.git"
+  },
+  "author": "Steven Braham <steven@braham.biz>",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/stevenbraham/unixtime/issues"
+  },
+  "homepage": "https://github.com/stevenbraham/unixtime#readme"
+}
