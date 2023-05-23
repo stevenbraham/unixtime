@@ -1,26 +1,40 @@
 import "date-util";
+import { Command } from "commander";
 
 // extend Date object to have strtotime method
 declare global {
   interface Date {
-    strtotime: (str: string) => Date | false;
+    strtotime: (str: string) => Date | false | number; // return type is Date or false or number (unix timestamp)
   }
 }
 
-// check if date string is present, first argument is node, second is script
-if (process.argv.length < 3) {
-  console.log("Usage: unixtime <date string>");
-  process.exit(1);
-}
+const program = new Command();
 
-const timesString = process.argv[2];
+program
+  .name("unixtime")
+  .description(
+    "CLI tools for converting Unix timestmaps to human readable dates and vice versa"
+  )
+  .version("1.0.0");
 
-const parsedDate = new Date().strtotime(timesString);
+program
+  .command("to-unix", { isDefault: true })
+  .description("Parse date string and return unix timestamp")
+  .argument("<string>", "date string to parse")
+  .action((timesString: string) => {
+    const parsedDate = new Date().strtotime(timesString);
+    if (parsedDate === false) {
+      return program.error("Invalid date string");
+    }
 
-if (parsedDate === false) {
-  console.log("Invalid date string");
-  process.exit(1);
-}
+    if (typeof parsedDate === "number") {
+      // already unix timestamp
+      console.log(parsedDate);
+      return;
+    }
 
-console.log(Math.round(parsedDate.getTime() / 1000)); // unix time in seconds
-process.exit(0);
+    // returned object is Date, convert to unix timestamp
+    console.log(Math.round(parsedDate.getTime() / 1000)); // unix time in seconds
+  });
+
+program.parse();

@@ -14,4 +14,4 @@ Credits to the [date-util library](https://www.npmjs.com/package/date-util) for 
 
 ## Usage
 
-After installation the tool should be available as the `unixtime <datestring>` command. Eg. `unixtime "-30
+After installation the tool should be available as the `unixtime <datestring>` command. Eg. `unixtime "-30 days"`
