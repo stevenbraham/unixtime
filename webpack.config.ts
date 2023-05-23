@@ -1,7 +1,7 @@
-const webpack = require("webpack");
-const path = require("path");
+import * as path from "path";
+import * as webpack from "webpack";
 
-module.exports = {
+const config: webpack.Configuration = {
   entry: ["./src/index.ts"],
   module: {
     rules: [
@@ -27,3 +27,5 @@ module.exports = {
     new webpack.BannerPlugin({ banner: "#!/usr/bin/env node", raw: true }), // Add shebang to the top of the file
   ],
 };
+
+export default config;

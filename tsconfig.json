@@ -11,5 +11,10 @@
         "lib": ["dom"],
         "resolveJsonModule": true
     },
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "ts-node": {
+        "compilerOptions": {
+          "module": "CommonJS"
+        }
+    }
 }
