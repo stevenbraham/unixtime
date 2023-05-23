@@ -18,7 +18,7 @@ After installation the tool should be available as the `unixtime` command. There
 
 ### to-unix
 
-This is the default command. Use `unixtime <string>` or `unixtime to-unix <string>` to convert a English datestring to an Unix timestamp. Eg. `unixtime to-unix "+30 days"`
+This is the default command. Use `unixtime <string>` or `unixtime to-unix <string>` to convert an English datestring to an Unix timestamp. Eg. `unixtime to-unix "+30 days"`
 
 #### from-unix
 
