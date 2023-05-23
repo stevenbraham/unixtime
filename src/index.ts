@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import toUnix from "./commands/toUnix";
+import fromUnix from "./commands/fromUnix";
 
 const program = new Command();
 
@@ -11,9 +12,13 @@ program
   .version("1.0.0");
 
 program
+  .command("from-unix")
+  .description("Parses an unix timestamp and return human readable date")
+  .argument("<timestamp>", "timestmap string to parse")
+  .action(fromUnix);
+program
   .command("to-unix", { isDefault: true })
-  .description("Parse date string and return unix timestamp")
+  .description("Parses date string and return unix timestamp")
   .argument("<string>", "date string to parse")
   .action(toUnix);
-
 program.parse();

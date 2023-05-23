@@ -31,6 +31,7 @@ describe("toUnix commmand", () => {
     // testing with a time string. Math.round and getTime should have been called in this test because the date is not a unix timestamp
     const mockeddMathRound = jest.spyOn(Math, "round");
     const mockedGetTime = jest.spyOn(Date.prototype, "getTime");
+    const mockedError = jest.spyOn(program, "error");
 
     const output = toUnix("+1 day");
     expect(output).toBe(undefined);
@@ -38,6 +39,7 @@ describe("toUnix commmand", () => {
     expect(mockedGetTime).toHaveBeenCalled();
 
     mockedGetTime.mockRestore();
+    mockedError.mockRestore();
     mockeddMathRound.mockRestore();
   });
 });

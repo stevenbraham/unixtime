@@ -1,6 +1,6 @@
 # Unixtime
 
-I often need to use Unix timestamps to search for stuff in MySQL tables. So I wrote this tool to quickly convert a date string to an Unix timestamp.
+I often need to use Unix timestamps to search for stuff in MySQL tables. So I wrote this tool to quickly convert a date string to an Unix timestamp and vice versa.
 
 Credits to the [date-util library](https://www.npmjs.com/package/date-util) for providing the strtotime parser.
 
@@ -14,4 +14,12 @@ Credits to the [date-util library](https://www.npmjs.com/package/date-util) for 
 
 ## Usage
 
-After installation the tool should be available as the `unixtime <datestring>` command. Eg. `unixtime "-30 days"`
+After installation the tool should be available as the `unixtime` command. There are two sub commands:
+
+### to-unix
+
+This is the default command. Use `unixtime <string>` or `unixtime to-unix <string>` to convert a English datestring to an Unix timestamp. Eg. `unixtime to-unix "+30 days"`
+
+#### from-unix
+
+Use `unixtime from-unix <timestamp>` to convert an Unix timestamp back to a normal datetime string.
