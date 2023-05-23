@@ -1,0 +1,15 @@
+{
+    "extends": "@tsconfig/node19",
+    "exclude": ["node_modules", "bin"],
+    "include": ["src/**/*.ts"],
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "esModuleInterop": true,
+        "target": "ES2020",
+        "lib": ["dom"],
+        "resolveJsonModule": true
+    },
+    "baseUrl": "./"
+}
